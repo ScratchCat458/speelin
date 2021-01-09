@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
+import static com.scratchcat458.util.Utils.space;
+
 public class Load {
     public static final String dir = "src\\_lists\\";
     public static final String path = "src\\_settings\\default.json";
@@ -18,6 +20,7 @@ public class Load {
         System.out.println("");
         System.out.println("Enter the file name of the list to be imported:");
         fileName = i.next();
+        space(4);
         return g.fromJson(new FileReader(dir + fileName + ".json"), WordList.class);
     }
     public static Settings loadSettingFile() throws FileNotFoundException {
@@ -28,6 +31,7 @@ public class Load {
         System.out.println("");
         System.out.println("Enter the file name of the list to be imported:");
         fileName = i.next();
+        space(4);
         return g.fromJson(new FileReader(dir + fileName + ".json"), Settings.class);
     }
     public static Settings loadDefaultSettingFile() throws FileNotFoundException {

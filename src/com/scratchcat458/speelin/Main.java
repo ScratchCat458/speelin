@@ -10,6 +10,8 @@ import com.scratchcat458.util.Settings;
 
 import java.util.Scanner;
 
+import static com.scratchcat458.util.Utils.space;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         boolean loop = true;
@@ -25,6 +27,7 @@ public class Main {
             System.out.println("4 Settings");
             System.out.println("5 Exit");
             int n = i.nextInt();
+            space(4);
 
             if(n == 1) {
                 if(s.isLoadOnStart()){
@@ -34,6 +37,7 @@ public class Main {
                 System.out.println("2 Word Guess");
 
                 int n4 = i.nextInt();
+                space(4);
                 if(n4 == 1) {
                     WordShuffle ws = new WordShuffle(list);
                     ws.startList();
@@ -52,7 +56,8 @@ public class Main {
             }
             else if(n == 3){
                 list = Load.loadListFile();
-                System.out.println(list.getName());
+                System.out.println(list.getName() + "has been loaded.");
+                space(4);
             }
             else if(n == 4){
                 s = Load.loadDefaultSettingFile();
@@ -61,24 +66,33 @@ public class Main {
                     System.out.println("1 Display Current");
                     System.out.println("2 Import Settings File");
                     System.out.println("3 Change Current");
-                    System.out.println("4 Return to Default");
-                    System.out.println("5 Exit");
+                    System.out.println("4 Set as Default");
+                    System.out.println("5 Return");
                     int n2 = i.nextInt();
+                    space(4);
                     if (n2 == 1) {
                         System.out.println("Auto Continue: " + s.isAutoCont());
                         System.out.println("Auto End: " + s.isAutoEnd());
                         System.out.println("Load List during Start: " + s.isLoadOnStart());
+                        System.out.println(" ");
+                        System.out.println("1 Return");
+                        int n5 = i.nextInt();
+                        if(n5 == 1){
+                            space(4);
+                        }
                     } else if (n2 == 2) {
                         s = Load.loadSettingFile();
                         loop = false;
+                        space(4);
                     } else if (n2 == 3) {
                         boolean loop2 = true;
                         while (loop2) {
                             System.out.println("1 Auto Continue: " + s.isAutoCont());
                             System.out.println("2 Auto End: " + s.isAutoEnd());
                             System.out.println("3 Load List during Start: " + s.isLoadOnStart());
-                            System.out.println("4 Exit");
+                            System.out.println("4 Return");
                             int n3 = i.nextInt();
+                            space(4);
 
                             if (n3 == 1) {
                                 s.setAutoCont(!s.isAutoCont());
@@ -99,6 +113,7 @@ public class Main {
                 }
             }
             else if(n == 5) {
+                space(4);
                 System.out.println("Exiting Application");
                 loop = false;
             }

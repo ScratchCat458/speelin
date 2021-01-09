@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
+import static com.scratchcat458.util.Utils.space;
+
 public class Download {
     public static void downloadListFile() throws Exception {
         String url;
@@ -24,6 +26,7 @@ public class Download {
         try (InputStream in = URI.create(url).toURL().openStream()) {
             Files.copy(in, Paths.get("src\\_lists\\" + name + ".json"));
             System.out.println("List from " + url + " imported successfully as " + name + ".json");
+            space(4);
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.scratchcat458.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,19 +14,6 @@ public class Utils {
         arr = list.toArray(new String[0]);
         return arr;
     }
-// --Commented out by Inspection START (3/12/2020 1:14 pm):
-//    public static int[] randomiseInt(int[] a, int n) {
-//        Random r = new Random();
-//        for (int i = n-1; i > 0; i--) {
-//            int j = r.nextInt(i);
-//
-//            int temp = a[i];
-//            a[i] = a[j];
-//            a[j] = temp;
-//        }
-//        return a;
-//    }
-// --Commented out by Inspection STOP (3/12/2020 1:14 pm)
 
     public static String[] randomiseString(String[] a, int n) {
         Random r = new Random();
@@ -36,5 +25,11 @@ public class Utils {
             a[j] = temp;
         }
         return a;
+    }
+
+    public static void space(int n) {
+        for(int i = n; i > 0; i--) {
+            System.out.println(" ");
+        }
     }
 }
